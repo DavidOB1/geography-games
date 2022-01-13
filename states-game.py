@@ -113,14 +113,14 @@ def abbrGame():
         print ("You got " + str(score_percent) + r"%" +  " of the questions correct.")
     pass
 
-print("Welcome to States Trivia! Quiz your knowledge on the US States.")
+print("Welcome to States Trivia! Quiz your knowledge of the US States.")
 print("Make a selection from the following options by typing the corresponding number.")
 print("Use /stop to end the game.")
 print("")
 print("(1) Capitals Quiz")
 print("(2) Year of Statehood Quiz")
 print("(3) States Spelling Quiz")
-print("(4) Abbreviationss Quiz")
+print("(4) Abbreviations Quiz")
 
 bool = True
 while bool:
