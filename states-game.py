@@ -10,14 +10,13 @@ states_lower = [state.lower() for state in states_list]
 
 ## Which state has the capital ""
 def capitalGame():
-    play = True
     score = 0
     tally = 0
-    while play:
+    while True:
         rand_state = random.choice(states)
         inp = input("What is the capital of " + rand_state.name + "?\n")
         if inp == "/stop":
-            play = False
+            break
         elif inp.lower() == rand_state.capital.lower():
             score += 1
             tally += 1
@@ -33,15 +32,14 @@ def capitalGame():
 
 ## In what year did "" get its statehood?
 def statehoodYearGame():
-    playGame = True
     score = 0
     tally = 0
-    while playGame:
+    while True:
         rand_state = random.choice(states)
         inp = input("What year did " + str(rand_state) + " gain statehood?\n")
         ans = str(rand_state.statehood_year)
         if inp == "/stop":
-            playGame = False
+            break
         elif inp == ans:
             score += 1
             tally += 1
@@ -58,10 +56,9 @@ def statehoodYearGame():
 
 ## What state starts with "" and ends with ""
 def spellingGame():
-    playing = True
     score = 0
     tally = 0
-    while playing:
+    while True:
         randomState = random.choice(states_lower)
         first_l = randomState[0]
         last_l = randomState[-1]
@@ -69,7 +66,7 @@ def spellingGame():
         question += "\" and ends with the letter \"" + last_l + "\"?\n" 
         stateInput = input(question)
         if stateInput == "/stop":
-            playing = False
+            break
         else:
             bool1 = (first_l == stateInput[0].lower()) and (last_l == stateInput[-1].lower())
             bool2 = stateInput.lower() in states_lower
@@ -90,16 +87,15 @@ def spellingGame():
 
 ## Name the abbreviation of this state:
 def abbrGame():
-    playGame = True
     score = 0
     tally = 0
-    while playGame:
+    while True:
         currentState = random.choice(states_list)
         userInput = input("What is the abbreviation of " + currentState + "? \n")
         answer = us.states.lookup(currentState).abbr
         if userInput == "/stop":
             print("Alright, stopping the game now.")
-            playGame = False
+            break
         elif userInput.upper() == answer:
             score += 1
             tally += 1
@@ -121,21 +117,31 @@ print("(1) Capitals Quiz")
 print("(2) Year of Statehood Quiz")
 print("(3) States Spelling Quiz")
 print("(4) Abbreviations Quiz")
+print("You can use /list to view these again.")
+print("")
 
-bool = True
-while bool:
+while True:
     selection = input("Which game would you like to play? ")
     if selection == "1":
-        bool = False
         capitalGame()
+        if input("Would you like to keep playing? (Y/N) ").lower() != "y":
+            break
     elif selection == "2":
-        bool = False
         statehoodYearGame()
+        if input("Would you like to keep playing? (Y/N) ").lower() != "y":
+            break
     elif selection == "3":
-        bool = False
         spellingGame()
+        if input("Would you like to keep playing? (Y/N) ").lower() != "y":
+            break
     elif selection == "4":
-        bool = False
         abbrGame()
+        if input("Would you like to keep playing? (Y/N) ").lower() != "y":
+            break
+    elif selection == "/list":
+        print("(1) Capitals Quiz")
+        print("(2) Year of Statehood Quiz")
+        print("(3) States Spelling Quiz")
+        print("(4) Abbreviations Quiz")
     else:
         print("That's not a valid input. Type either 1, 2, 3, or 4.")
