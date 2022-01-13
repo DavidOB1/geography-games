@@ -28,7 +28,7 @@ def capitalGame():
     print("Your final score was " + str(score) + ".")
     if tally != 0:
         score_percent = round(100*(score/tally), 2)
-        print ("You successfuly answered " + str(score_percent) + r"%" +  " of the questions.")
+        print ("You correctly answered " + str(score_percent) + r"%" +  " of the questions.")
     pass
 
 ## In what year did "" get its statehood?
@@ -52,7 +52,7 @@ def statehoodYearGame():
     print("Alright, your final score was " + str(score) + "!")
     if tally != 0:
         score_percent = round(100*(score/tally), 2)
-        print ("You successfuly answered " + str(score_percent) + r"%" +  " of the questions.")
+        print ("You correctly answered " + str(score_percent) + r"%" +  " of the questions.")
     pass
 
 
