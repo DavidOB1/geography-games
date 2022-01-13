@@ -115,6 +115,7 @@ def abbrGame():
 
 print("Welcome to States Trivia! Quiz your knowledge on the US States.")
 print("Make a selection from the following options by typing the corresponding number.")
+print("Use /stop to end the game")
 print("")
 print("(1) Capitals Quiz")
 print("(2) Year of Statehood Quiz")
