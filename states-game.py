@@ -4,8 +4,7 @@ import random
 ## pip install us
 
 states = us.states.STATES
-states_list = [str(state) for state in states]
-states_lower = [state.lower() for state in states_list]
+states_lower = [x.name.lower() for x in states]
 
 
 ## Which state has the capital ""
@@ -90,9 +89,9 @@ def abbrGame():
     score = 0
     tally = 0
     while True:
-        currentState = random.choice(states_list)
-        userInput = input("What is the abbreviation of " + currentState + "? \n")
-        answer = us.states.lookup(currentState).abbr
+        currentState = random.choice(states)
+        userInput = input("What is the abbreviation of " + currentState.name + "? \n")
+        answer = currentState.abbr
         if userInput == "/stop":
             print("Alright, stopping the game now.")
             break
